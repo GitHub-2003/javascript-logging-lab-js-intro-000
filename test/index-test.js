@@ -8,7 +8,7 @@ describe('index', () => {
   const html = '<div></div>'
   const src = path.resolve(__dirname, '..', 'index.js')
 
-  it('calls console.error()', done => {
+  it('calls console.error("1.  Need to show some error msg here")', done => {
     const spy = expect.spyOn(console, 'error').andCallThrough()
 
     jsdom.env(html, [src], {
@@ -20,7 +20,7 @@ describe('index', () => {
     })
   })
 
-  it('calls console.log("Need to log something in this function")', done => {
+  it('calls console.log("2.  Need to log something in this function")', done => {
     const spy = expect.spyOn(console, 'log').andCallThrough()
 
     jsdom.env(html, [src], {
@@ -32,7 +32,7 @@ describe('index', () => {
     })
   })
 
-  it('calls console.warn("Need warn something here")', done => {
+  it('calls console.warn("3.  Need warn something here")', done => {
     const spy = expect.spyOn(console, 'warn').andCallThrough()
 
     jsdom.env(html, [src], {
